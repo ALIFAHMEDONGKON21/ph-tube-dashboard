@@ -49,6 +49,18 @@ const displayVideos=(video)=>{
     const videos_container=document.getElementById('Videos');
     videos_container.innerHTML="";
 
+    if (video.length == 0) {
+        videos_container.classList.remove("grid");
+        videos_container.innerHTML = `
+        <div class="min-h-[300px] flex flex-col gap-5 justify-center items-center">
+        
+          <img src="assets/Icon.png" /> 
+          <h2 class="text-center text-xl font-bold"> No Content Here in this Categery </h2> 
+        </div>`;
+      } else {
+        videos_container.classList.add("grid");
+      }
+
     video.forEach(item =>{
         console.log(item)
 
